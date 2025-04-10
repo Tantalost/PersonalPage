@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="logstyle.css">
 </head>
 <body>
     <canvas id="matrix-bg"></canvas>
     <div class="damage-overlay"></div>
     <div class="login-container">
+        <div class="tip-container">
+            <div id="tip-text">Tip: Loading...</div>
+        </div>
         <div class="login-window">
             <div class="window-header">
                 <span class="close-btn">×</span>
@@ -31,6 +34,7 @@
     </div>
     <audio id="error" src="https://www.myinstants.com/media/sounds/minecraft-hit-sound.mp3" preload="auto"></audio>
     <audio id="click" src="https://www.myinstants.com/media/sounds/minecraft-click.mp3" preload="auto"></audio>
-    <script src="loginscript.js"></script>
+    <audio id="beep" src="https://www.myinstants.com/media/sounds/beep-6-96243.mp3" preload="auto"></audio>
+    <script src="logscript.js"></script>
 </body>
 </html> 

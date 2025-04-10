@@ -74,13 +74,13 @@ function updateProgress(progress) {
 // loading nya
 let progress = 0;
 const loadingInterval = setInterval(() => {
-    progress += Math.floor(Math.random() * 10) + 1;
+    progress += Math.floor(Math.random() * 3) + 1;
     if (progress >= 100) {
         progress = 100;
         clearInterval(loadingInterval);
         setTimeout(() => {
             window.location.href = '/Login/login.html';
-        }, 500);
+        }, 300);
     }
     updateProgress(progress);
 }, 200);
