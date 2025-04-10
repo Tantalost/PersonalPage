@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loginstyle.css">
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="damage-overlay"></div>
+    <div class="login-container">
+        <div class="login-window">
+            <div class="window-header">
+                <span class="close-btn">×</span>
+            </div>
+            <div class="login-content">
+                <h1>I don't trust you yet...</h1>
+                <div class="input-group">
+                    <input type="text" id="username" class="pixel-input" placeholder="Username" autocomplete="off">
+                    <input type="password" id="password" class="pixel-input" placeholder="Password" autocomplete="off">
+                </div>
+                <div id="attempts" class="attempts-text">Attempts remaining: 3</div>
+                <div class="button-group">
+                    <button id="ok-btn" class="pixel-button">OK</button>
+                    <button id="cancel-btn" class="pixel-button outlined">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="error" src="https://www.myinstants.com/media/sounds/minecraft-hit-sound.mp3" preload="auto"></audio>
+    <audio id="click" src="https://www.myinstants.com/media/sounds/minecraft-click.mp3" preload="auto"></audio>
+    <script src="loginscript.js"></script>
+</body>
+</html> 
