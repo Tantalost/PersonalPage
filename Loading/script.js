@@ -39,16 +39,16 @@ setInterval(drawMatrix, 50);
 
 // tips ko
 const tips = [
-    "Trust no one",
-    "Look behind you",
-    "Don't feed the AI after midnight",
-    "The cake is a lie",
-    "Save early, save often",
-    "Check your surroundings",
-    "Passwords are like underwear",
+    "Bisaya si Eric",
+    "I'm Inside your walls",
+    "Dont use sir jason's password",
+    "Hero's Never Fail",
+    "RadioHead only",
+    "Viva La Vida",
+    "What's your name Boy!",
     "Reality is an illusion",
-    "Follow the white rabbit",
-    "There is no spoon"
+    "I want to break free",
+    "Sir Jason pa internship"
 ];
 
 const beepSound = document.getElementById('beep');
