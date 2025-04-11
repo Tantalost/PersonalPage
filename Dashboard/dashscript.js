@@ -20,7 +20,7 @@ document.getElementById('start-btn').addEventListener('click', () => {
     }, 200);
 });
 
-document.getElementById('settings-btn').addEventListener('click', () => {
+document.getElementById('credits-btn').addEventListener('click', () => {
     playClick();
     setTimeout(() => {
         alert('Settings are currently unavailable.\nPlease try again later.');
@@ -34,7 +34,7 @@ document.getElementById('exit-btn').addEventListener('click', () => {
         if (confirmExit) {
             sessionStorage.removeItem('loggedIn');
             sessionStorage.removeItem('username');
-            window.location.href = 'index.html';
+            window.location.href = '../Loading/index.html';
         }
     }, 200);
 });
@@ -81,4 +81,4 @@ function updateSplashText() {
     }, 500);
 }
 
-setInterval(updateSplashText, 3000); 
+setInterval(updateSplashText, 2000); 

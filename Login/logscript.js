@@ -123,7 +123,7 @@ document.getElementById('ok-btn').addEventListener('click', () => {
         if (attemptsLeft === 0) {
             setTimeout(() => {
                 alert('Access Denied: Too many failed attempts');
-                window.location.href = 'index.html';
+                window.location.href = '../Loading/index.html';
             }, 500);
         }
     }
