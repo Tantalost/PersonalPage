@@ -112,7 +112,7 @@ document.getElementById('ok-btn').addEventListener('click', () => {
         playSound(clickSound);
         sessionStorage.setItem('loggedIn', 'true');
         sessionStorage.setItem('username', username);
-        window.location.href = 'dashboard.html';
+        window.location.href = '../Dashboard/dashboard.html';
     } else {
         attemptsLeft--;
         updateAttempts();

@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.minecraft-background {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://media.tenor.com/qNFxd4_OaUEAAAAM/cat-scream.gif') center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    position: relative;
+    animation: panorama 60s linear infinite alternate;
+}
+
+@keyframes panorama {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
+}
+
+.minecraft-logo {
+    text-align: center;
+    margin-bottom: 50px;
+    transform: rotate(-5deg);
+}
+
+.minecraft-logo h1 {
+    font-size: 48px;
+    color: #fff;
+    text-shadow: 4px 4px #3f3f3f;
+    margin-bottom: 20px;
+}
+
+.splash-text {
+    color: #ffff00;
+    transform: rotate(15deg);
+    font-size: 16px;
+    text-shadow: 2px 2px #3f3f3f;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: rotate(15deg) translateY(0); }
+    50% { transform: rotate(15deg) translateY(-10px); }
+}
+
+.menu-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.minecraft-button {
+    padding: 15px;
+    font-size: 16px;
+    background: #999999;
+    border: 2px solid #373737;
+    color: #FFF;
+    text-shadow: 2px 2px #373737;
+    box-shadow: inset -2px -2px 0px #373737, inset 2px 2px 0px #FFF;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.minecraft-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.minecraft-button:hover {
+    background: #AAAAAA;
+    transform: scale(1.02);
+}
+
+.minecraft-button:hover::before {
+    left: 100%;
+}
+
+.minecraft-button:active {
+    box-shadow: inset 2px 2px 0px #373737, inset -2px -2px 0px #FFF;
+    transform: scale(0.98);
+}
+
+.version-text {
+    position: fixed;
+    bottom: 40px;
+    left: 10px;
+    color: #FFF;
+    font-size: 12px;
+    text-shadow: 2px 2px #000;
+}
+
+.copyright-text {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: #FFF;
+    font-size: 12px;
+    text-shadow: 2px 2px #000;
+}
+
+@keyframes glow {
+    0% { box-shadow: inset -2px -2px 0px #373737, inset 2px 2px 0px #FFF, 0 0 5px rgba(255, 255, 255, 0.5); }
+    50% { box-shadow: inset -2px -2px 0px #373737, inset 2px 2px 0px #FFF, 0 0 20px rgba(255, 255, 255, 0.5); }
+    100% { box-shadow: inset -2px -2px 0px #373737, inset 2px 2px 0px #FFF, 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+
+.minecraft-button:hover {
+    animation: glow 2s infinite;
+} 
