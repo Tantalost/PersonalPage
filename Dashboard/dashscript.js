@@ -23,7 +23,7 @@ document.getElementById('start-btn').addEventListener('click', () => {
 document.getElementById('credits-btn').addEventListener('click', () => {
     playClick();
     setTimeout(() => {
-        alert('Settings are currently unavailable.\nPlease try again later.');
+        window.location.href = '../Credits/credits.html';
     }, 200);
 });
 
