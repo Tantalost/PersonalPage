@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Press Start 2P', cursive;
-    background: url('/Dirt_background_BE2.webp') repeat;
+    background: url('/Mainpage/Dirt_background_BE2.webp') repeat;
     color: white;
 }
   
@@ -18,7 +18,7 @@ h1 {
 }
   
 .world-list {
-    max-height: 300px;
+    max-height: 250px;
     overflow-y: auto;
     border: 2px solid #999;
     background: rgba(0, 0, 0, 0.5);

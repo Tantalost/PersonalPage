@@ -1,38 +1,38 @@
 let worlds = [
     {
-      name: "New World",
+      name: "Portfolio",
       date: "13/07/2022, 1:31 pm",
       mode: "Creative",
       version: "1.19",
-      img: "https://via.placeholder.com/64"
+      img: "https://i.redd.it/xf9lfoq75lf31.png"
     },
     {
-      name: "New World",
+      name: "CV/Resume/Biodata",
       date: "13/07/2022, 1:30 pm",
       mode: "Survival",
       version: "1.19",
-      img: "https://via.placeholder.com/64"
+      img: "https://assetsio.gnwcdn.com/pack__1_.png?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp"
     },
     {
-      name: "World 3",
+      name: "Web Scraper",
       date: "01/01/2023, 12:00 pm",
       mode: "Survival",
       version: "1.20",
-      img: "https://via.placeholder.com/64"
+      img: "https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/anonymous-512.png"
     },
     {
       name: "Creative Fun",
       date: "10/05/2023, 3:45 pm",
       mode: "Creative",
       version: "1.18",
-      img: "https://via.placeholder.com/64"
+      img: "https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/anonymous-512.png"
     },
     {
       name: "Survival Island",
       date: "20/09/2023, 10:15 am",
       mode: "Survival",
       version: "1.17",
-      img: "https://via.placeholder.com/64"
+      img: "https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/anonymous-512.png"
     }
   ];
   

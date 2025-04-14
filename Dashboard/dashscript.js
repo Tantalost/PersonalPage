@@ -16,7 +16,7 @@ function playClick() {
 document.getElementById('start-btn').addEventListener('click', () => {
     playClick();
     setTimeout(() => {
-        alert('Initializing program...\nAccess granted!');
+        window.location.href = '../Mainpage/maindash.html';
     }, 200);
 });
 
