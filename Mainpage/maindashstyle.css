@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background: url('/Dirt_background_BE2.webp') repeat;
+    color: white;
+}
+  
+.container {
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+  
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+  
+.world-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 2px solid #999;
+    background: rgba(0, 0, 0, 0.5);
+}
+  
+.world-entry {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    padding: 10px;
+    cursor: pointer;
+}
+  
+.world-entry img {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+  
+.world-entry .world-info {
+    text-align: left;
+}
+  
+.world-entry.selected {
+    background: #555;
+    border: 2px solid #fff;
+}
+  
+.button-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+  
+.button-row-top,
+.button-row-bottom {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+  
+button {
+    background: #ccc;
+    border: 2px solid #999;
+    padding: 6px 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    cursor: pointer;
+}
+  
+button:hover {
+    background: #eee;
+}
+  
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+  
+.modal-content {
+    background: #222;
+    border: 3px solid #aaa;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+}
+  
+.modal-content label {
+    display: block;
+    margin: 10px 0;
+    font-size: 10px;
+}
+  
+.modal-buttons {
+    text-align: right;
+}
+  
+.modal-buttons button {
+    margin-left: 10px;
+}
