@@ -1,38 +1,38 @@
 let worlds = [
     {
       name: "Portfolio",
-      date: "13/07/2022, 1:31 pm",
+      date: "10/05/2025, 7:00 pm",
       mode: "Creative",
-      version: "1.19",
+      version: "3.1",
       img: "https://i.redd.it/xf9lfoq75lf31.png"
     },
     {
       name: "CV/Resume/Biodata",
       date: "13/07/2022, 1:30 pm",
       mode: "Survival",
-      version: "1.19",
+      version: "8.1",
       img: "https://assetsio.gnwcdn.com/pack__1_.png?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp"
     },
     {
       name: "Web Scraper",
       date: "01/01/2023, 12:00 pm",
       mode: "Survival",
-      version: "1.20",
-      img: "https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/anonymous-512.png"
+      version: "1.2",
+      img: "https://media.licdn.com/dms/image/v2/C5603AQEU8b-iJvTZrg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1645491449277?e=2147483647&v=beta&t=OQijFzsKNkJOEe5ZFjZ7pnw499SHhyd87Bsh57Sjems"
     },
     {
-      name: "Creative Fun",
+      name: "Github Profile",
       date: "10/05/2023, 3:45 pm",
       mode: "Creative",
-      version: "1.18",
-      img: "https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/anonymous-512.png"
+      version: "6.2",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhBGIIU8c_gA8qeLyRlg1xyY4TQFv76tJdPC8MUFiOHr_KVbOw5phcx94PMSmbJRvE1ts&usqp=CAU"
     },
     {
-      name: "Survival Island",
+      name: "Random Coffee Place Decider",
       date: "20/09/2023, 10:15 am",
       mode: "Survival",
-      version: "1.17",
-      img: "https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/anonymous-512.png"
+      version: "1.1",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC7V2ugGxpGeu8Zn5ISLKtQS0CcCdWufIhXw&s"
     }
   ];
   
@@ -138,7 +138,7 @@ function closeModal() {
   
 function cancel() {
     alert("Returning to home screen...");
-    window.location.href = "/Mainpage/maindash.html";
+    window.location.href = "../Dashboard/dashboard.html";
 }
   
 window.onload = renderWorlds;

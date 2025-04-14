@@ -60,14 +60,14 @@ document.querySelectorAll('.minecraft-button').forEach(button => {
 const splashTexts = [
     "Bisaya si Eric",
     "As seen on TV!",
-    "100% secure!",
-    "Better than ever!",
-    "More pixels!",
-    "Less bugs!",
+    "Jason Catadman",
+    "I know where you live",
+    "More Cofee Please!",
+    "Chicken Jockey",
     "Made with love!",
-    "Stay a while!",
+    "I am inevitable",
     "Don't look behind you!",
-    "Also try cybersecurity!"
+    "Mibomboclat!"
 ];
 
 function updateSplashText() {
@@ -78,7 +78,7 @@ function updateSplashText() {
     setTimeout(() => {
         splashElement.textContent = randomSplash;
         splashElement.style.opacity = '1';
-    }, 500);
+    }, 200);
 }
 
 setInterval(updateSplashText, 2000); 
