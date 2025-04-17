@@ -9,16 +9,14 @@ require_once 'config.php';
 $error = '';
 $username = '';
 
+// was created to always reset the counter to 3 every form submitted
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
-    $_SESSION['login-attempts'] = 3;
+    $_SESSION['login_attempts'] = 3;
 }
 
-if (!isset($_SESSION['login_attempts'])) {
-    $_SESSION['login-attempts'] = 3;
-}
+$attempts_left = $_SESSION['login_attempts'];
 
-$attempts_left = $_SESSION['login-attempts'];
-
+// will redirect the user after failing the limit
 if ($attempts_left == 0) {
     $error = "You have reached the limit. Try again later";
     header("Location: /Loading/index.php");
@@ -33,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     //checks to see if there are empty inputs
     if (empty($username) || empty($password)) {
-        $_SESSION['login-attempts'] -= 1;
-        $attempts_left = $_SESSION['login-attempts'];
+        $_SESSION['login_attempts'] -= 1;
+        $attempts_left = $_SESSION['login_attempts'];
         $error = "Fill in both fields.";
     } else {
             try {
@@ -49,19 +47,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         $_SESSION["admin_logged_in"] = true;
                         $_SESSION["admin_id"] = $row["id"];
                         $_SESSION["admin_username"] = $row["username"];
-                        $_SESSION['login-attempts'] = 3;
+                        $_SESSION['login_attempts'] = 3;
                         header("Location: /Dashboard/dashboard.php");
                         exit;
                 } else {
                     // if there is a issue will not redirect and printout error text focuses on the information inside the row
-                    $_SESSION['login-attempts']--;
-                    $attempts_left = $_SESSION['login-attempts'];
-                    $error = "Invalid Credentials";
+                    $_SESSION['login_attempts']--;
+                    $attempts_left = $_SESSION['login_attempts'];
+                    $error = "Invalid Credentials not found inside the database";
                 }
             } else {
                 // if there is a issue will not redirect and printout error text focuses on the information inside the row
-                $_SESSION['login-attempts']--;
-                $attempts_left = $_SESSION['login-attempts'];
+                $_SESSION['login_attempts']--;
+                $attempts_left = $_SESSION['login_attempts'];
                 $error = "Invalid Credentials";
             }
         } catch (PDOException $e) {
@@ -100,8 +98,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <input type="text" name="username" id="username" class="pixel-input" placeholder="Username" autocomplete="off">
                         <input type="password" name="password" id="password" class="pixel-input" placeholder="Password" autocomplete="off">
                     </div>
-                    <div id="attempts" class="attempts-text" data-attempts-left="<?php echo $attempts_left; ?>"
-                        <?php if ($error): ?>style="color: red;"<?php endif; ?>> Attempts remaining: <?php echo $attempts_left; ?>
+                    <div id="attempts" class="attempts-text" data-attempts-left="<?php echo htmlspecialchars($attempts_left); ?>"
+                        <?php if ($error): ?>style="color: red;"<?php endif; ?>> Attempts remaining: <?php echo htmlspecialchars($attempts_left); ?>
                     </div> 
                     <div class="button-group">
                         <button id="ok-btn" class="pixel-button">OK</button>
