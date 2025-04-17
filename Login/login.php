@@ -61,15 +61,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
             <div class="login-content">
                 <h1>I don't trust you yet...</h1>
-                <div class="input-group">
-                    <input type="text" id="username" class="pixel-input" placeholder="Username" autocomplete="off">
-                    <input type="password" id="password" class="pixel-input" placeholder="Password" autocomplete="off">
-                </div>
-                <div id="attempts" class="attempts-text">Attempts remaining: 3</div>
-                <div class="button-group">
-                    <button id="ok-btn" class="pixel-button">OK</button>
-                    <button id="cancel-btn" class="pixel-button outlined">CANCEL</button>
-                </div>
+                <form method="POST" action="login.php">
+                    <div class="input-group">
+                        <input type="text" name="username" id="username" class="pixel-input" placeholder="Username" value="<?php echo htmlspecialchars($username); ?>" autocomplete="off">
+                        <input type="password" name="password" id="password" class="pixel-input" placeholder="Password" autocomplete="off">
+                    </div>
+                    <div id="attempts" class="attempts-text">Attempts remaining: 3</div>
+                    <?php if (!empty($error)): ?>
+                        <div class="attempts-text" style="color: red;"><?php echo htmlspecialchars($error); ?></div>
+                    <?php endif; ?>
+
+                    <div class="button-group">
+                        <button type="submit" id="ok-btn" class="pixel-button">OK</button>
+                        <button type="submit" id="cancel-btn" class="pixel-button outlined">CANCEL</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
