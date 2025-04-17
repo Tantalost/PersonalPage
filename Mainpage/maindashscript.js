@@ -138,7 +138,7 @@ function closeModal() {
   
 function cancel() {
     alert("Returning to home screen...");
-    window.location.href = "../Dashboard/dashboard.html";
+    window.location.href = "../Dashboard/dashboard.php";
 }
   
 window.onload = renderWorlds;

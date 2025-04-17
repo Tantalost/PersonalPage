@@ -1,5 +1,5 @@
 if (!sessionStorage.getItem('loggedIn')) {
-    window.location.href = '/Dashboard/dashboard.html';
+    window.location.href = '/Dashboard/dashboard.php';
 } else {
     const username = sessionStorage.getItem('username');
     document.querySelector('.minecraft-logo h1').textContent = `Welcome, ${username}`;
@@ -16,7 +16,7 @@ function playClick() {
 document.getElementById('start-btn').addEventListener('click', () => {
     playClick();
     setTimeout(() => {
-        window.location.href = '../Mainpage/maindash.html';
+        window.location.href = '../Mainpage/maindash.php';
     }, 200);
 });
 
