@@ -112,11 +112,14 @@ window.addEventListener('DOMContentLoaded', () => {
             showDamageEffect();
         }
     
-        if (attemptsLeft === 0) {
+        if (attemptsLeft <= 0) {
+            playSound(errorSound);
+            showDamageEffect();
+        
             setTimeout(() => {
                 alert('Access Denied: Too many failed attempts');
                 window.location.href = '/Loading/index.php';
-            }, 2000);
+            }); 
         }
     }
 
