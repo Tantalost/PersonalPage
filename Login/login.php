@@ -1,3 +1,44 @@
+<?php
+session_start();
+require_once 'config.php';
+
+$error = '';
+$username = '';
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = trim($_POST["username"] ?? '');
+    $password = trim($_POST["password"] ?? '');
+
+    if (empty($username) || empty($password)) {
+        $error = "Fill in both fields.";
+    } else {
+        try {
+            $stmt = $pdo->prepare("SELECT id, username, password FROM admin_users WHERE username = :username LIMIT 1");
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->execute();
+
+            if ($stmt->rowCount() === 1) {
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                if (password_verify($password, $row["password"])) {
+                    $_SESSION["admin_logged_in"] = true;
+                    $_SESSION["admin_id"] = $row["id"];
+                    $_SESSION["admin_username"] = $row["username"];
+                    header("Location: admin_dashboard.php");
+                    exit;
+                } else {
+                    $error = "Invalid Credentials";
+                }
+            } else {
+                $error = "Invalid Credentials";
+            }
+        } catch (PDOException $e) {
+            error_log("Login error: " . $e->getMessage());
+            $error = "An error occurred. Please try again later.";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
