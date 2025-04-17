@@ -71,8 +71,6 @@ setInterval(updateTip, 4000);
 updateTip();
 
 // login info eto lang puede
-const CORRECT_USERNAME = 'admin';
-const CORRECT_PASSWORD = 'trustno1';
 let attemptsLeft = 3;
 
 const loginContainer = document.querySelector('.login-container');
@@ -104,30 +102,28 @@ function clearInputs() {
     document.getElementById('password').value = '';
 }
 
-document.getElementById('ok-btn').addEventListener('click', () => {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username === CORRECT_USERNAME && password === CORRECT_PASSWORD) {
-        playSound(clickSound);
-        sessionStorage.setItem('loggedIn', 'true');
-        sessionStorage.setItem('username', username);
-        window.location.href = '../Dashboard/dashboard.html';
-    } else {
-        attemptsLeft--;
-        updateAttempts();
-        showDamageEffect();
+window.addEventListener('DOMContentLoaded', () => {
+    const errorBox = document.querySelector('.attempts-text[style]');
+    if (errorBox){
         playSound(errorSound);
-        clearInputs();
+        showDamageEffect();
 
+        attemptsLeft = parseInt(errorBox.getAttribute('data-attempts-left'), 10);
         if (attemptsLeft === 0) {
             setTimeout(() => {
                 alert('Access Denied: Too many failed attempts');
-                window.location.href = '../Loading/index.html';
-            }, 500);
+                window.location.href = '/Loading/index.php';
+            }, 2000);
         }
     }
-});
+
+    const loginForm = document.querySelector('form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', () =>{
+            playSound(clickSound);
+        })
+    }
+})
 
 document.getElementById('cancel-btn').addEventListener('click', () => {
     playSound(clickSound);

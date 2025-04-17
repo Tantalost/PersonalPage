@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     $_SESSION["admin_logged_in"] = true;
                     $_SESSION["admin_id"] = $row["id"];
                     $_SESSION["admin_username"] = $row["username"];
-                    header("Location: admin_dashboard.php");
+                    header("Location: maindash.php");
                     exit;
                 } else {
                     $error = "Invalid Credentials";
@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $error = "An error occurred. Please try again later.";
         }
     }
+
 }
 ?>
 
@@ -66,9 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <input type="text" name="username" id="username" class="pixel-input" placeholder="Username" value="<?php echo htmlspecialchars($username); ?>" autocomplete="off">
                         <input type="password" name="password" id="password" class="pixel-input" placeholder="Password" autocomplete="off">
                     </div>
-                    <div id="attempts" class="attempts-text">Attempts remaining: 3</div>
                     <?php if (!empty($error)): ?>
-                        <div class="attempts-text" style="color: red;"><?php echo htmlspecialchars($error); ?></div>
+                        <p class="attempts-text" style="color: red;" data-attempts-left="<?= $attempts_left ?? 3 ?>">
+                            <?= htmlspecialchars($error) ?>
+                        </p>
                     <?php endif; ?>
 
                     <div class="button-group">
