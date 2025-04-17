@@ -103,12 +103,15 @@ function clearInputs() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    const errorBox = document.querySelector('.attempts-text[style]');
-    if (errorBox){
-        playSound(errorSound);
-        showDamageEffect();
-
+    const errorBox = document.getElementById('attempts');
+    if (errorBox) {
         attemptsLeft = parseInt(errorBox.getAttribute('data-attempts-left'), 10);
+        
+        if (attemptsLeft < 3) {
+            playSound(errorSound);
+            showDamageEffect();
+        }
+    
         if (attemptsLeft === 0) {
             setTimeout(() => {
                 alert('Access Denied: Too many failed attempts');
@@ -132,7 +135,7 @@ document.getElementById('cancel-btn').addEventListener('click', () => {
 
 document.querySelector('.close-btn').addEventListener('click', () => {
     playSound(clickSound);
-    window.location.href = 'index.html';
+    window.location.href = '/Loading/index.html';
 });
 
 document.addEventListener('keydown', (e) => {
