@@ -5,6 +5,7 @@ require_once 'config.php';
 $error = '';
 $username = '';
 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST["username"] ?? '');
     $password = trim($_POST["password"] ?? '');
@@ -19,11 +20,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if ($stmt->rowCount() === 1) {
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                echo "DB hash: " . $row["password"] . "<br>";
+                echo "Password entered: " . $password . "<br>";
+                var_dump(password_verify($password, $row["password"]));
+                if ($stmt->rowCount() === 1) {
+                    echo "User found!<br>";
+                }
                 if (password_verify($password, $row["password"])) {
                     $_SESSION["admin_logged_in"] = true;
                     $_SESSION["admin_id"] = $row["id"];
                     $_SESSION["admin_username"] = $row["username"];
-                    header("Location: maindash.php");
+                    if (headers_sent()) {
+                        die("Headers already sent");
+                    }
+                    header("Location: /Mainpage/maindash.php");
                     exit;
                 } else {
                     $error = "Invalid Credentials";
@@ -36,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $error = "An error occurred. Please try again later.";
         }
     }
-
 }
 ?>
 
@@ -63,21 +72,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="login-content">
                 <h1>I don't trust you yet...</h1>
                 <form method="POST" action="login.php">
-                    <div class="input-group">
-                        <input type="text" name="username" id="username" class="pixel-input" placeholder="Username" value="<?php echo htmlspecialchars($username); ?>" autocomplete="off">
-                        <input type="password" name="password" id="password" class="pixel-input" placeholder="Password" autocomplete="off">
-                    </div>
-                    <?php if (!empty($error)): ?>
-                        <p class="attempts-text" style="color: red;" data-attempts-left="<?= $attempts_left ?? 3 ?>">
-                            <?= htmlspecialchars($error) ?>
-                        </p>
-                    <?php endif; ?>
-
-                    <div class="button-group">
-                        <button type="submit" id="ok-btn" class="pixel-button">OK</button>
-                        <button type="submit" id="cancel-btn" class="pixel-button outlined">CANCEL</button>
-                    </div>
-                </form>
+                <div class="input-group">
+                    <input type="text" name="username" id="username" class="pixel-input" placeholder="Username" autocomplete="off">
+                    <input type="password" name="password" id="password" class="pixel-input" placeholder="Password" autocomplete="off">
+                </div>
+                <div id="attempts" class="attempts-text">Attempts remaining: 3</div>
+                <div class="button-group">
+                    <button id="ok-btn" class="pixel-button">OK</button>
+                    <button id="cancel-btn" class="pixel-button outlined">CANCEL</button>
+                </div>
             </div>
         </div>
     </div>
