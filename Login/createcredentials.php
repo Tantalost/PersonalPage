@@ -1,4 +1,4 @@
-// Used once 
+// Used once //
 <?php
 require_once 'config.php';
 

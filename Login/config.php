@@ -14,7 +14,7 @@ $options = [
 ];
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, $option);
+    $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }

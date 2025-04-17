@@ -79,7 +79,7 @@ const loadingInterval = setInterval(() => {
         progress = 100;
         clearInterval(loadingInterval);
         setTimeout(() => {
-            window.location.href = '/Login/login.html';
+            window.location.href = '/Login/login.php';
         }, 300);
     }
     updateProgress(progress);
