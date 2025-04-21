@@ -138,7 +138,7 @@ document.getElementById('cancel-btn').addEventListener('click', () => {
 
 document.querySelector('.close-btn').addEventListener('click', () => {
     playSound(clickSound);
-    window.location.href = '/Loading/index.html';
+    window.location.href = '/Loading/index.php';
 });
 
 document.addEventListener('keydown', (e) => {

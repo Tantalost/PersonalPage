@@ -23,7 +23,7 @@ document.getElementById('start-btn').addEventListener('click', () => {
 document.getElementById('credits-btn').addEventListener('click', () => {
     playClick();
     setTimeout(() => {
-        window.location.href = '../Credits/credits.html';
+        window.location.href = '../Credits/credits.php';
     }, 200);
 });
 
