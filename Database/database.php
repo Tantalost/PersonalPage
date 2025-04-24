@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'agrify';
+$db   = 'PersonalPage';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';

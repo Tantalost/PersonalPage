@@ -24,7 +24,7 @@
     <div class="status-window">
       <div class="status-content">
         <h2>STATUS</h2>
-        <p>NAME: SUNG JIN-WOO &nbsp;&nbsp;&nbsp;&nbsp; LEVEL: 39</p>
+        <p>NAME: SUNG JIN-WOO &nbsp;&nbsp;&nbsp;&nbsp; LEVEL: 20</p>
         <p>JOB: NONE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FATIGUE: 0</p>
         <p>TITLE: WOLF SLAYER</p>
         <p>HP: 7229</p>
