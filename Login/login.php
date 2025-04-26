@@ -23,7 +23,6 @@ if ($attempts_left == 0) {
     exit;
 }
 
-
 // gets the post from the loginform
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = trim($_POST["username"] ?? '');

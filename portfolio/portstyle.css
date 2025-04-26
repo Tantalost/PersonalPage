@@ -7,7 +7,7 @@
 
 body {
     background-color: #000;
-    color: #0f0;
+    color: rgb(52, 128, 52);
     min-height: 100vh;
     overflow: hidden;
 }
