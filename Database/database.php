@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'PersonalPage';
+$db   = 'pp';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
