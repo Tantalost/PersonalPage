@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         $_SESSION["admin_id"] = $row["id"];
                         $_SESSION["admin_username"] = $row["username"];
                         $_SESSION['login_attempts'] = 3;
-                        header("Location: /Dashboard/dashboard.php");
+                        header("Location: /portfolio/portfolio.php");
                         exit;
                 } else {
                     // if there is a issue will not redirect and printout error text focuses on the information inside the row
