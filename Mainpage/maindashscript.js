@@ -63,7 +63,26 @@ let worlds = [
   
 function playWorld() {
     if (selectedWorldIndex !== null) {
-      alert(`Playing world: ${worlds[selectedWorldIndex].name}`);
+      const world = worlds[selectedWorldIndex];
+      switch(world.name) {
+        case "Portfolio":
+          window.location.href = "../portfolio/portfolio.php";
+          break;
+        case "CV/Resume/Biodata":
+          window.location.href = "../CV/cv.php";
+          break;
+        case "Web Scraper":
+          window.location.href = "../WebScraper/scraper.php";
+          break;
+        case "Github Profile":
+          window.location.href = "https://github.com/Tantalost";
+          break;
+        case "Random Coffee Place Decider":
+          window.location.href = "../CoffeePlace/coffee.php";
+          break;
+        default:
+          alert(`No redirect URL configured for: ${world.name}`);
+      }
     } else {
       alert("No world selected.");
     }
